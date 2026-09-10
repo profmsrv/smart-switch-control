@@ -19,6 +19,33 @@ The system uses ESP8266 controllers and RS485 communication to provide reliable,
 📈 Energy usage monitoring and analytics
 🧩 Modular and scalable architecture
 🔄 Real-time communication between controllers
+
+                ┌─────────────────────┐
+                │    Mobile / Web     │
+                │     Application     │
+                └──────────┬──────────┘
+                           │
+                         Wi-Fi
+                           │
+                ┌──────────▼──────────┐
+                │   Main Controller   │
+                │      ESP8266        │
+                └──────────┬──────────┘
+                           │
+                          RS485
+                           │
+        ┌──────────────────┼──────────────────┐
+        │                  │                  │
+ ┌──────▼──────┐    ┌──────▼──────┐    ┌──────▼──────┐
+ │ Sub-Control │    │ Sub-Control │    │ Sub-Control │
+ │    ESP8266  │    │    ESP8266  │    │    ESP8266  │
+ └──────┬──────┘    └──────┬──────┘    └──────┬──────┘
+        │                  │                  │
+     Relays             Relays             Relays
+        │                  │                  │
+     Loads              Loads              Loads
+
+
 🏗️ System Architecture
                 ┌─────────────────────┐
                 │    Mobile / Web     │
